@@ -1,11 +1,8 @@
 import React from 'react';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
 import { StyleSheet, Text, View } from 'react-native';
-import stopwatchReducer from './store/stopwatchState/stopwatch.reducer';
 import RootNavigatorContainer from './navigation/root.navigator';
-
-const store = createStore(stopwatchReducer);
+import { store } from './store';
 
 export default class App extends React.Component {
   render() {

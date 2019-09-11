@@ -1,4 +1,3 @@
-import { StopwatchTypes } from "../store/stopwatchState/stopwatch.types";
 import { toggleStopwatchRunning, setStopwatchTime } from "../store/stopwatchState/stopwatch.actions";
 
 export interface IAction {
