@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 import { stopwatchReducer, initialStopwatchState } from './stopwatchState/stopwatch.reducer';
 
 const rootReducer = combineReducers({
@@ -11,7 +12,8 @@ const initialRootState = {
 
 export const store = createStore(
   rootReducer,
-  initialRootState
+  initialRootState,
+  composeWithDevTools()
 );
 
 export type AppState = ReturnType<typeof rootReducer>;
