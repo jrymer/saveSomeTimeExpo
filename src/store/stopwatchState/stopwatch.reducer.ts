@@ -1,4 +1,3 @@
-import { combineReducers } from 'redux';
 import { IStopwatchState, IAction } from '../../models/saveSomeTime';
 import * as stopwatchTypes from './stopwatch.types';
 
@@ -7,9 +6,10 @@ const initialStopwatchState: IStopwatchState = {
   stopwatchTime: null
 };
 
-const stopwatchReducer = (state = initialStopwatchState, action: IAction) => {
+const stopwatchReducer = (state = initialStopwatchState, action: IAction): IStopwatchState => {
   switch (action.type) {
     case stopwatchTypes.TOGGLE_STOPWATCH:
+    console.log('toggle reducer');
       return {
         ...state,
         stopwatchRunning: !state.stopwatchRunning
@@ -24,6 +24,4 @@ const stopwatchReducer = (state = initialStopwatchState, action: IAction) => {
   }
 };
 
-export default combineReducers({
-  stopwatchState: stopwatchReducer
-});
+export default stopwatchReducer;

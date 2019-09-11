@@ -7,14 +7,16 @@ import RootNavigatorContainer from './navigation/root.navigator';
 
 const store = createStore(stopwatchReducer);
 
-export default function App() {
-  return (
-    <Provider store={store}>
-      <View style={styles.container}>
-        <RootNavigatorContainer />
-      </View>
-    </Provider>
-  );
+export default class App extends React.Component {
+  render() {
+    return (
+      <Provider store={store}>
+        <View style={styles.container}>
+          <RootNavigatorContainer />
+        </View>
+      </Provider>
+    );
+  };
 }
 
 const styles = StyleSheet.create({
